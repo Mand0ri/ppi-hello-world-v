@@ -7,6 +7,11 @@
     <title>Projeto lindo</title>
 </head>
 <body>
-    <h1>Feliz Ano Novo!</h1>
+    <h1>Site do Vinicius!</h1>
+    <?php
+    require_once "model/Conexao.php";
+    $tecnologias = Conexao::select("tecnologia", "id, nome");
+    print_r($tecnologias);
+    ?>
 </body>
 </html>
