@@ -18,7 +18,7 @@ class Conexao
         $recurso->execute();
     }
 
-    public static function select($colunas, $tabela)
+    public static function select($tabela, $colunas)
     {
         $sql = "SELECT $colunas FROM $tabela;";
         $recurso = self::getConexao()->prepare($sql);
@@ -45,9 +45,9 @@ class Conexao
     {
         try {
             $conexao = new PDO(
-                "mysql:host=localhost;dbname=ppi4v_guloseimas",
-                "ppi4v",
-                "ppi42@ifrn"
+                "pgsql:host=ec2-3-227-154-49.compute-1.amazonaws.com;port=5432;dbname=df4od0bkf7g1eb",
+                "nyhrddadwdpqjy",
+                "2f27b3f97526773f6d15428a4dcb5be3c7df729393d46ddee550da5f3664888f"
             );
             $conexao->setAttribute(
                 PDO::ATTR_ERRMODE,
